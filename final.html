@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>JavaScript Text File Download Demo</title>
+</head>
+<body>
+  <a href="" id="download">Download</a>
+  <script>
+  var fileName = 'myfile.txt';
+  var fileContent = 'Page content...';
+  var myFile = new Blob([fileContent], {type: 'text/plain'});
+
+  window.URL = window.URL || window.webkitURL;
+  document.getElementById('download').setAttribute('href', window.URL.createObjectURL(myFile));
+  document.getElementById('download').setAttribute('download', fileName);
+  </script>
+</body>
+</html>
